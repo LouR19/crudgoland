@@ -1,0 +1,32 @@
+
+{{define "inicio"}}
+{{template "c"}}
+<br>
+<a name="" id="" class="btn btn-primary" href="/crear" role="button">Crear Usuario</a>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{range .}}
+    <tr>
+      <td>{{.ID}}</td>
+      <td>{{.Nombre}}</td>
+      <td>{{.Correo}}</td>
+      <td> 
+        <a name="" id="" class="btn btn-primary" href="/edit?id={{.ID}}" role="button">Editar</a>
+        <a name="" id="" class="btn btn-danger" href="/borrar?id={{.ID}}" role="button">Eliminar</a>
+      </td>
+    </tr>
+  {{end}}
+  </tbody>
+</table>
+{{template "p"}}
+{{end}}

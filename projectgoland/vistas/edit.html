@@ -1,0 +1,32 @@
+{{define "edit"}}
+{{template "c"}}
+<br>
+<div class="card">
+    <div class="card-header">
+        Usuario
+    </div>
+    <div class="card-body">
+      <form method="post" action="/ed">
+        <div class="form-group">
+            <label class="sr-only" for="inputName">ID de Usuario</label>
+            <input type="text" value={{.ID}} class="form-control" name="id" id="id" placeholder="">
+        </div>
+
+        <div class="form-group">
+          <label for="">Nombre:</label>
+          <input type="text"
+            class="form-control" name="nombre" value= {{.Nombre}} id="nombre" aria-describedby="helpId" placeholder="">
+          <small id="helpId" class="form-text text-muted">Ingrese nombre</small>
+        </div>
+
+        <div class="form-group">
+          <label for="">Correo:</label>
+          <input type="email" class="form-control" name="correo" value={{.Correo}} id="correo" aria-describedby="emailHelpId" placeholder="">
+          <small id="emailHelpId" class="form-text text-muted">Ingrese correo ej: example@email.com</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Editar Usuario</button>
+      </form>
+    </div>
+</div>
+{{template "p"}}
+{{end}}
